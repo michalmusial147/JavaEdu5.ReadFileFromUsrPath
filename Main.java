@@ -31,17 +31,18 @@ public class Main {
         }
     }
     public static void main(String[] args){
+
         String usr_path;
         List<String> AllLines;
         System.out.println("File path:");
         try{
-            BufferedReader consoleRead = new BufferedReader(new InputStreamReader(System.in));
-            usr_path = consoleRead.readLine();
+            Scanner consoleRead = new Scanner(System.in);
+            usr_path = consoleRead.next();
             WriteLineIO("path.txt", usr_path);
             AllLines = ReadFileNIO(usr_path);
             print(AllLines);
             System.out.println("Press enter to continue");
-            consoleRead.readLine();
+            consoleRead.next();
             strange(usr_path);
         }
         catch(IOException e){
